@@ -1,0 +1,87 @@
+﻿@model Tarea13.Models.Meals
+@{
+    ViewBag.Title = "Mostrar";
+}
+
+<h2>Mostrar</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-2">
+            <label>
+                @Html.LabelFor(model => model.MeaID)
+            </label>
+        </div>
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.MeaID)
+
+        </div>
+
+    </div><div class="row">
+        <div class="col-md-2">
+            <label>
+                @Html.LabelFor(model => model.Name)
+            </label>
+        </div>
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.Name)
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>
+                @Html.LabelFor(model => model.MealType)
+            </label>
+        </div>
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.MealType)
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>
+                @Html.LabelFor(model => model.Description)
+            </label>
+        </div>
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.Description)
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>
+                @Html.LabelFor(model => model.Cost)
+            </label>
+        </div>
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.Cost)
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>
+                @Html.LabelFor(model => model.Picture)
+            </label>
+        </div>
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.Picture)
+
+        </div>
+
+    </div>
+
+
+
+}
+@Html.ActionLink("Listar comidas", "Listar" , "Meals"
+    )
+

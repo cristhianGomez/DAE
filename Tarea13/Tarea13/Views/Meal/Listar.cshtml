@@ -1,0 +1,22 @@
+﻿@model List<Tarea13.Models.Meals>
+@{
+    ViewBag.Title = "Listar";
+    var grid = new WebGrid(source: Model, columnNames: new[] {
+    "PersonaID","Nombre","Apellido","FechaNac","Direccion","Email"
+});
+}
+
+<h2>Listar comidas</h2>
+
+@grid.GetHtml(tableStyle: "table table-striped", columns: grid.Columns(
+        grid.Column(columnName: "MeaID", header: "Comida numero"),
+        grid.Column(columnName: "Name", header: "Nombre"),
+        grid.Column(columnName: "MealType", header: "tipo"),
+        grid.Column(columnName: "Cost", header: "costo"),
+        grid.Column(columnName: "Description", header: "descripcion"),
+        grid.Column(columnName: "Picture", header: "imagen"),
+        grid.Column(header: "Acciones", format:(item) => Html.ActionLink("Ver", "Mostrar", "Persona",
+               new { id = item.MeaID }, null))
+
+
+    ))
